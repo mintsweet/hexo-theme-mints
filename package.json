@@ -1,0 +1,16 @@
+{
+  "name": "hexo-theme-cold",
+  "version": "1.0.0",
+  "description": "A super cool theme for Hexo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mintsweet/hexo-theme-cold.git"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "hexo-theme"
+  ],
+  "author": "青湛(GitHub/mintsweet)",
+  "license": "MIT"
+}

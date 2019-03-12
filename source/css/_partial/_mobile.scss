@@ -1,0 +1,112 @@
+// =======================================
+// Mobile style
+// =======================================
+
+.mobile-navbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $zindex-2;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: $white;
+  box-shadow: 2px 2px 6px rgba(0,0,0,.2);
+  transition: transform .3s;
+  &.slide-left {
+    transform: translate3d(-180px, 0, 0);
+  }
+  .mobile-navbar-logo {
+    display: inline-block;
+    margin: 0 50px;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    a {
+      font-size: 20px;
+    }
+  }
+  .mobile-navbar-home {
+    float: left;
+    width: 50px;
+    height: 50px;
+    a {
+      @include block-full();
+      color: $theme-color;
+    }
+    i {
+      line-height: 50px;
+      font-size: 24px;
+    }
+  }
+  .mobile-navbar-menu {
+    position: relative;
+    float: right;
+    width: 50px;
+    height: 50px;
+    span {
+      position: absolute;
+      left: calc((100% - 20px) / 2);
+      top: calc((100% - 1px) / 2);
+      width: 20px;
+      height: 1px;
+      background-color: $theme-color;
+      transition: transform .3s;
+      &:nth-child(1) {
+        transform: translateY(6px) rotate(0deg);
+      }
+      &:nth-child(3) {
+        transform: translateY(-6px) rotate(0deg);
+      }
+    }
+    &.open {
+      span:nth-child(1) {
+        transform: rotate(45deg);
+      }
+      span:nth-child(2) {
+        display: none;
+      }
+      span:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 180px;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: rgba(lighten($theme-color, 80%), 0.1);
+  transform: translate3d(180px, 0, 0);
+  transition: transform .3s;
+  &.open {
+    transform: translate3d(0, 0, 0);
+  }
+  .mobile-menu-list {
+    margin-top: 50px;
+  }
+  .mobile-menu-item {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: $font-size-larger;
+    border-bottom: 1px solid lighten($theme-color, 80%);
+    &:first-child {
+      border-top: 1px solid lighten($theme-color, 80%);
+    }
+    a {
+      @include block-full();
+    }
+  }
+}
+
+@include max-screen() {
+  .mobile-navbar {
+    display: block;
+  }
+}

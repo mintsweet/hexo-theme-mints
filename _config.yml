@@ -1,0 +1,37 @@
+# =======================================
+# Site Information Setting
+# =======================================
+
+# Site create time
+since: 2017
+
+# Set default keywords
+keywords: "青湛, 个人博客"
+
+# Custom your favicon.ico in `site/source`
+favicon: /favicon.ico
+
+# Menu settings
+menu:
+  home: /
+  archive: /archives
+  # categories: /categories
+  tags: /tags
+  # about: /about
+
+# Social links
+social:
+  envelope: 0x1304570@gmail.com
+  github: https://github.com/mintsweet
+  weibo: https://weibo.com/yudaren0720
+
+# Assets
+css: css
+js: js
+img: img
+lib: lib
+
+# Is exist home page
+isHome:
+  exist: true
+  url: http://www.yujunren.com/

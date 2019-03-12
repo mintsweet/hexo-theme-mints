@@ -1,0 +1,33 @@
+title:
+  archive: Archive
+  categories: Categories
+  tags: Tags
+
+menu:
+  home: Home
+  archive: Archive
+  categories: Categories
+  tags: Tags
+  about: About
+
+posts:
+  prev: Prev
+  next: Next
+  prev_post: Prev
+  next_post: Next
+  readmore: Read more..
+
+counter:
+  all: All
+  archives:
+    zero: No Posts
+    one: 1 Post In Total
+    other: "%d Posts In Total"
+  tags:
+    zero: No Tags
+    one: 1 Tag In Total
+    other: "%d Tags In Total"
+
+footer:
+  powered: "Powered by %s"
+  theme: Theme
