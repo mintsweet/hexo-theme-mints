@@ -1,0 +1,8 @@
+<div class="tags">
+  <div class="tag-title">
+    <%= _p('counter.tags', site.tags.length) %>
+  </div>
+  <div class="tag-cloud">
+    <%- tagcloud({min_font: 18, max_font: 40, amount: 30, orderby: 'count'}) %>
+  </div>
+</div>

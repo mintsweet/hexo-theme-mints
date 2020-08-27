@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <% if (page.title) { %>
+    <%= page.title %> |
+    <% } %>
+    <%= config.title %>
+  </title>
+  <meta name="author" content="<%- config.author %>">
+  <meta name="keywords" content="<%- config.keywords %>">
+  <meta name="description" content="<%- config.description %>">
+  <% if (theme.favicon) { %>
+  <link rel="icon" href="<%- theme.favicon %>">
+  <% } %>
+  <%- css('css/style') %>
+
+</head>

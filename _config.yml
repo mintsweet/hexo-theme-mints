@@ -5,9 +5,6 @@
 # Site create time
 since: 2017
 
-# Set default keywords
-keywords: "青湛, 个人博客"
-
 # Custom your favicon.ico in `site/source`
 favicon: /favicon.ico
 

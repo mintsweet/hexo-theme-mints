@@ -1,0 +1,9 @@
+<div class="post-list" id="post-list">
+  <% page.posts.each(function(post, i) { %>
+  <%- partial('_partial/post', {post: post}) %>
+  <% if (page.posts.length -1 !== i) { %>
+  <hr />
+  <% } %>
+  <% }) %>
+</div>
+<%- partial('_partial/pagination') %>
