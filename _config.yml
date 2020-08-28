@@ -27,8 +27,3 @@ css: css
 js: js
 img: img
 lib: lib
-
-# Is exist home page
-isHome:
-  exist: true
-  url: http://www.yujunren.com/
