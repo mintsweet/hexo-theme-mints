@@ -1,0 +1,23 @@
+.tag-cloud {
+  margin: 10px 0;
+  text-align: center;
+
+  h3 {
+    span {
+      color: $theme-color;
+      border-bottom: 2px solid $theme-color;
+    }
+  }
+
+  a {
+    display: inline-block;
+    margin: 5px 10px;
+    word-wrap: break-word;
+    transition: transform ease-out 0.2s;
+
+    &:hover {
+      color: $theme-color;
+      transform: scale(1.1);
+    }
+  }
+}

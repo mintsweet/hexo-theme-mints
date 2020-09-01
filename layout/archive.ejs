@@ -1,1 +1,34 @@
-<%- partial('_partial/archive') %>
+<section class="archive">
+  <%
+    var name;
+    if (page.tag) {
+      name = page.tag;
+    } else if (page.category) {
+      name = page.category;
+    } else {
+      name = __('counter.all');
+    }
+  %>
+  <div class="title">
+    <h2 class="name"><%= name %></h2>
+    <% if (page.archive) { %>
+    <span class="counter">
+      <%= _p("counter.archives", site.posts.length) %>
+    </span>
+    <% } %>
+  </div>
+
+  <% var year %>
+  <% page.posts.each(function(post) { %>
+  <% if (year !== date(post.date, 'YYYY')) { %>
+  <% year = date(post.date, 'YYYY') %>
+  <h3 class="year"><%= year %></h3>
+  <% } %>
+  <div class="post">
+    <span class="post-time">
+      <%= page.archive ? date(post.date, 'MM-DD') : date(post.date, 'YYYY-MM-DD') %>
+    </span>
+    <%- link_to(post.path, post.title, { class: 'post-title' }) %>
+  </div>
+  <% }) %>
+</section>

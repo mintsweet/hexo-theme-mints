@@ -1,29 +1,15 @@
-<div class="footer">
-  <% if (theme.social) { %>
-  <div class="footer-links">
-    <% for (var i in theme.social) { %>
-    <% if (i === 'envelope') { %>
-    <a href="mailto:<%- i %>" class="iconfont icon-<%- i %>"></a>
-    <% } else { %>
-    <a href="<%- url_for(theme.social[i]) %>" class="iconfont icon-<%- i %>"></a>
+<div class="copy">
+  <p>
+    <%- __('powered', link_to('https://hexo.io', 'Hexo')) %> |
+    <%- __('theme', link_to('https://github.com/mintsweet/hexo-theme-cold', 'Cold')) %>
+  </p>
+  <p>
+    <% var now = date(Date.now(), 'YYYY') %>
+    &copy;
+    <% if (theme.since && now > theme.since) { %>
+    <%= theme.since %> -
     <% } %>
-    <% } %>
-  </div>
-  <% } %>
-  <div class="footer-copy">
-    <p>
-      <%- __('footer.powered', '<a href="https://hexo.io/" target="_blank">Hexo</a>') %> | 
-      <%= __('footer.theme') %> - <a href="https://github.com/yudaren007007/hexo-theme-cold" target="_blank">Cold</a>
-    </p>
-    <p>
-      <% var now = date(Date.now(), 'YYYY') %>
-      &copy;
-      <% if (theme.since && theme.since !== now) { %>
-      <%= theme.since %> -
-      <% } %>
-      <%= now %>
-      <i class="iconfont">&#xe692;</i>
-      <span><%= config.author %></span>
-    </p>
-  </div>
+    <%= now %>
+    <span><%= config.author %></span>
+  </p>
 </div>

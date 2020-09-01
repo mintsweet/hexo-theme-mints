@@ -4,9 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <% 
+    var title = page.title;
+
+    if (is_archive()) {
+      title = __('archive');
+    } else if (is_category()) {
+      title = `${__('categories')}:${page.category}`;
+    } else if (is_tag()) {
+      title = `${__('tags')}:${page.tag}`;
+    } else if (page.type === 'tags') {
+      title = __('tags');
+    }
+  %>
   <title>
-    <% if (page.title) { %>
-    <%= page.title %> |
+    <% if (title) { %>
+    <%= title %> |
     <% } %>
     <%= config.title %>
   </title>
@@ -17,5 +30,4 @@
   <link rel="icon" href="<%- theme.favicon %>">
   <% } %>
   <%- css('css/style') %>
-
 </head>

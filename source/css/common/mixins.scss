@@ -1,0 +1,10 @@
+@mixin mobile() {
+  @media screen and (max-width: $global-body-width) {
+    @content;
+  }
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}

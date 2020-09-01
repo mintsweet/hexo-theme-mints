@@ -1,10 +1,6 @@
-// =======================================
-// Variables
-// =======================================
-
 // Thmem Color
 // =======================================
-$theme-color: #03353E !default;
+$theme-color: #03353e !default;
 
 // Colors
 // =======================================
@@ -14,51 +10,32 @@ $black-deep: #222 !default;
 $grey-light: #d7d7d7 !default;
 $grey: #ccc !default;
 $grey-deep: #b7b7b7 !default;
-$white: #FEFEFE !default;
+$white: #fefefe !default;
 
-// Base
+// Font
 // =======================================
-
-// Font Families
-$font-family-base: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif !default;
+$font-family-base: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif !default;
 $font-family-serif: Athelas, STHeiti, Microsoft Yahei, serif !default;
 $font-family-code: Consolas, Monaco, Menlo, Consolas, monospace !default;
 
-// Font Size
 $font-size-base: 16px !default;
-$font-size-small: $font-size-base - 2px !default;
-$font-size-smaller: $font-size-base - 4px !default;
 $font-size-large: $font-size-base + 2px !default;
 $font-size-larger: $font-size-base + 4px !default;
+$font-size-small: $font-size-base - 2px !default;
+$font-size-smaller: $font-size-base - 4px !default;
 
-// Heading Font Size
-$font-size-headings-step: 2px !default;
-$font-size-headings-base: 24px !default;
-
-// Font Weight
-$font-weight-lighter: 200 !default;
 $font-weight-light: 300 !default;
 $font-weight-normal: 400 !default;
 $font-weight-bold: 600 !default;
-$font-weight-bolder: 700 !default;
 
-// Line Height
 $line-height-base: 2 !default;
 
-// Global width of '<body>'.
-$global-body-width: 1024px !default;
-
-// Global Text Color
+// Global
+// =======================================
+$global-body-width: 960px !default;
+$global-menu-width: 160px !default;
 $global-font-color: $black-light !default;
-
-// Global Background Color
 $global-bg-color: $white !default;
-
-// Global Selection
-$global-selection-bg-color: $theme-color !default;
-$global-selection-color: $white !default;
-
-// Global Link Color
 $global-link-color: $black-light !default;
 $global-link-hover-color: darken($theme-color, 10%) !default;
 
@@ -69,16 +46,17 @@ $global-headings: (
   h3: 18px,
   h4: 16px,
   h5: 14px,
-  h6: 12px
+  h6: 12px,
 ) !default;
 
 // Z-index master list
 $zindex-bottom: -1 !default;
-$zindex-1: 110 !default;
-$zindex-2: 120 !default
-$zindex-3: 130 !default;
-$zindex-4: 140 !default;
-$zindex-5: 150 !default;
+$zindex-1: 100 !default;
+$zindex-2: 110 !default;
+$zindex-3: 120 !default;
+$zindex-4: 130 !default;
+$zindex-5: 140 !default;
+$zindex-max: 999 !default;
 
 // Code type
 // =======================================
@@ -89,7 +67,6 @@ $code-type-list: (
   bash: "Bash",
 ) !default;
 
-
 // Color of code highlight, solarized.
 // =======================================
 $code-highlight-color: (
@@ -99,5 +76,5 @@ $code-highlight-color: (
   title: #268bd2,
   attribute: #b58900,
   symbol: #cb4b16,
-  built_in: #dc322f
+  built_in: #dc322f,
 ) !default;

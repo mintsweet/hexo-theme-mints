@@ -1,12 +1,18 @@
-<ul class="menu">
+<div class="nav-bar">
+  <div class="title">
+    <%- link_to('.', config.title) %>
+  </div>
+  <div class="menu-controller">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<div class="menu">
   <% for (var i in theme.menu) { %>
-  <li class="menu-item">
-    <a href="<%- url_for(theme.menu[i]) %>" class="iconfont icon-<%- i %>"></a>
-    <%
-      var name = __('menu.' + i.toLowerCase());
-      name = name.startsWith('menu') ? i : name;
-    %>
-    <span><%= name %></span>
+  <li>
+    <%- link_to(theme.menu[i], __(i)) %>
   </li>
   <% } %>
-</ul>
+</div>

@@ -1,12 +1,17 @@
 <%- partial('_partial/head') %>
 <body>
-  <%- partial('_partial/mobile') %>
-  <div class="container" id="main">
+  <nav class="nav">
+    <%- partial('_partial/nav') %>
+  </nav>
+  <main>
     <div class="layout">
-      <%- partial('_partial/nav') %>
       <%- body %>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="layout">
       <%- partial('_partial/footer') %>
     </div>
-  </div>
+  </footer>
 </body>
 <%- js('js/main.js') %>

@@ -1,9 +1,22 @@
-<div class="post-list" id="post-list">
+<div class="post-list">
   <% page.posts.each(function(post, i) { %>
-  <%- partial('_partial/post', {post: post}) %>
-  <% if (page.posts.length -1 !== i) { %>
-  <hr />
-  <% } %>
+  <article class="post">
+    <h2 class="title">
+      <%- link_to(post.path, post.title) %>
+    </h2>
+
+    <div class="info">
+      <span class="date"><%= date(post.date, 'YYYY-MM-DD') %></span>
+    </div>
+
+    <div class="content">
+      <%- post.excerpt %>
+    </div>
+
+    <%- link_to(post.path, __('readmore'), { class: 'read-more' }) %>
+  </article>
   <% }) %>
 </div>
-<%- partial('_partial/pagination') %>
+<div class="paginate">
+  <%- paginator({ prev_text: __('prev'), next_text: __('next') }) %>
+</div>

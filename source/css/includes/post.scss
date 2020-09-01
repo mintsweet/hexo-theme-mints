@@ -1,0 +1,79 @@
+// =======================================
+// Post style
+// =======================================
+
+@import "post/code";
+
+.post-list {
+  .post {
+    &::after {
+      content: '';
+      display: block;
+      margin: 20px 0;
+      height: 3px;
+      border: none;
+      background-color: $grey;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        white,
+        white 4px,
+        transparent 4px,
+        transparent 8px
+      );
+    }
+  }
+
+  &:last-child {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.post {
+  position: relative;
+  padding: 0 5px;
+  overflow: hidden;
+
+  .title {
+    position: relative;
+    padding-left: 10px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 3px;
+      height: 100%;
+      background: lighten($theme-color, 10%);
+    }
+  }
+
+  .info {
+    display: flex;
+  }
+
+  .content {
+    margin-top: 20px;
+  }
+
+  .read-more {
+    display: block;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: translateX(10px);
+    }
+  }
+
+  .tags {
+    margin-top: 20px;
+    border-top: 1px dashed rgba($theme-color, 0.4);
+
+    .tag {
+      margin-right: 10px;
+      color: lighten($theme-color, 15%);
+    }
+  }
+}

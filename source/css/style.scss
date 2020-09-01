@@ -1,28 +1,56 @@
-// =======================================
-// Style
-// =======================================
+@import "./common/variables.scss";
+@import "./common/mixins";
+@import "./common/normalize";
 
-@import '_custom/_custom';
-@import '_variables';
+body {
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+  color: $global-font-color;
+  line-height: $line-height-base;
+  background-color: $global-bg-color;
+  border-top: 5px solid $theme-color;
 
-@import '_common/_normalize';
-@import '_common/_mixins';
+  @include mobile() {
+    border-top: none;
+  }
 
-@import '_base';
+  &.offset {
+    transition: transform 0.3s;
+    transform: translateX(-$global-menu-width);
+    box-shadow: 1px 0 6px rgba(0, 0, 0, 0.1);
+  }
+}
 
-// 字体
-@import '_partial/_iconfont';
-// 右侧菜单
-@import '_partial/_nav';
-// 底部
-@import '_partial/_footer';
-// 文章
-@import '_partial/_post';
-// 分页
-@import '_partial/_pagination';
-// 标签页
-@import '_partial/_tags';
-// 移动版
-@import '_partial/_mobile';
-// 归档
-@import '_partial/_archive';
+@each $header, $size in $global-headings {
+  #{$header} {
+    font-size: $size;
+    font-family: $font-family-serif;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $global-link-color;
+  transition: color 0.3s;
+
+  &:hover {
+    color: $global-link-hover-color;
+  }
+}
+
+.layout {
+  margin: 0 auto;
+  width: $global-body-width;
+
+  @include mobile() {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+@import "./includes/nav";
+@import "./includes/footer";
+@import "./includes/tagcloud";
+@import "./includes/archive";
+@import "./includes/post";
+@import "./includes/paginate";
