@@ -1,10 +1,11 @@
 code, pre {
   padding: 7px;
+  font-family: $font-family-code;
+  font-size: $font-size-smaller;
   background-color: rgba(lighten($theme-color, 40%), .1);
 }
 
 code {
-  margin: 0 3px;
   padding: 2px 5px;
   color: lighten($theme-color, 10%);
   background: rgba(lighten($theme-color, 30%), 0.1);
