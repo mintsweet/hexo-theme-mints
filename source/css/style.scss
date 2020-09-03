@@ -13,6 +13,7 @@ body {
 
   @include mobile() {
     border-top: none;
+    font-siz: $font-size-small;
   }
 
   &.offset {
@@ -26,6 +27,12 @@ body {
   #{$header} {
     font-size: $size;
     font-family: $font-family-serif;
+  }
+
+  @include mobile() {
+    #{$header} {
+      font-size: $size - 2px;
+    }
   }
 }
 

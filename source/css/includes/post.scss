@@ -5,9 +5,13 @@
 @import "post/code";
 
 .post-list {
+  @include mobile() {
+    padding: 0 10px;
+  }
+
   .post {
     &::after {
-      content: '';
+      content: "";
       display: block;
       margin: 20px 0;
       height: 3px;
@@ -32,20 +36,25 @@
 
 .post {
   position: relative;
-  padding: 0 5px;
   overflow: hidden;
 
-  .title {
+  @include mobile() {
+    padding: 0 10px;
+  }
+
+  & > .title {
     position: relative;
-    padding-left: 10px;
+    padding-left: 20px;
 
     &::before {
       content: "";
       position: absolute;
+      top: 50%;
+      margin-top: -12px;
       left: 0;
       bottom: 0;
       width: 3px;
-      height: 100%;
+      height: 24px;
       background: lighten($theme-color, 10%);
     }
   }
@@ -56,6 +65,20 @@
 
   .content {
     margin-top: 20px;
+
+    blockquote {
+      position: relative;
+      margin: 10px 0;
+      padding: 4px 20px;
+      color: rgba($theme-color, 0.8);
+      background-color: lighten($theme-color, 90%);
+      border-left: 3px solid $theme-color;
+
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      p {
+        margin: 0;
+      }
+    }
   }
 
   .read-more {
