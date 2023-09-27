@@ -1,0 +1,7 @@
+<footer class="absolute bottom-4 left-0 right-0">
+  <p class="container mx-auto text-sm">
+    <% var now = date(Date.now(), 'YYYY') %> Copyright &copy; <% if (theme.since && now >
+    theme.since) { %> <%= theme.since %> - <% } %> <%= now %> <%= config.author
+    || config.title %>
+  </p>
+</footer>
