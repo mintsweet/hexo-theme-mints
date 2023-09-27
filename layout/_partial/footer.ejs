@@ -1,7 +1,14 @@
 <footer class="absolute bottom-4 left-0 right-0">
-  <p class="container mx-auto text-sm">
-    <% var now = date(Date.now(), 'YYYY') %> Copyright &copy; <% if (theme.since && now >
-    theme.since) { %> <%= theme.since %> - <% } %> <%= now %> <%= config.author
-    || config.title %>
-  </p>
+  <div class="container mx-auto flex items-center justify-between">
+    <p class="text-sm">
+      <% var now = date(Date.now(), 'YYYY') %> Copyright &copy; <% if
+      (theme.since && now > theme.since) { %> <%= theme.since %> - <% } %> <%=
+      now %> <%= config.author || config.title %>
+    </p>
+    <ul class="flex items-center justify-end">
+      <% for (var i in theme.nav) { %>
+      <li class="ml-4 text-sm hover:underline hover:text-gray-500"><%- link_to(theme.nav[i], __('nav.' + i)) %></li>
+      <% } %>
+    </ul>
+  </div>
 </footer>
