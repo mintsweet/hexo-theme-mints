@@ -1,0 +1,5 @@
+<ul class="flex items-center">
+  <% for (var i in theme.nav) { %>
+  <li class="mr-4 text-gray-400 hover:underline hover:text-gray-500 transition-colors"><%- link_to(theme.nav[i], __('nav.' + i)) %></li>
+  <% } %>
+</ul>

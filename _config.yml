@@ -1,2 +1,14 @@
+# =======================================
+# Theme Setting
+# =======================================
+
+# Nav
+nav:
+  home: /
+  # about: /about/
+  archives: /archives/
+  # category: /category/
+  # tag: /tag/
+
 # Site Create Time
 since:
