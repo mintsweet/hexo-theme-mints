@@ -10,6 +10,15 @@ nav:
   categories: /categories/
   tags: /tags/
 
+# Links to your social media.
+social_links:
+  email:
+  github:
+  linkedin:
+  twitter:
+  instagram:
+  youtube:
+
 # Site Create Time
 since:
 
