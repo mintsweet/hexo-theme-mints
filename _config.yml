@@ -5,10 +5,10 @@
 # Nav
 nav:
   home: /
-  # about: /about/
+  about: /about/
   archives: /archives/
-  # category: /category/
-  # tag: /tag/
+  categories: /categories/
+  tags: /tags/
 
 # Site Create Time
 since:
