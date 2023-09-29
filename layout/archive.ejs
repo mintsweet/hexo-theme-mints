@@ -1,14 +1,38 @@
-<ul class="container mx-auto">
-  <% var year %> <% page.posts.each(function(post) { %> <% if (year !==
-  date(post.date, 'YYYY')) { %> <% year = date(post.date, 'YYYY') %>
-  <h2 class="mt-8 mb-2 font-semibold text-lg"><%= year %></h2>
-  <% } %>
-  <li class="pl-4 mb-1">
-    <span class="mr-6 text-sm text-gray-500">
-      <%= page.archive ? date(post.date, 'MM-DD') : date(post.date,
-      'YYYY-MM-DD') %>
-    </span>
-    <span class="text-sm border-b border-gray-500 hover:border-gray-900"><%- link_to(post.path, post.title, { class: 'post-title' }) %></span>
-  </li>
-  <% }) %>
-</ul>
+<div class="container mx-auto mt-8">
+  <!-- Logo -->
+  <div class="flex items-center mb-4">
+    <div class="w-10 h-10">
+      <img src="/logo.svg" alt="" />
+    </div>
+    <div class="ml-8">
+      <h1 class="text-lg"><%- config.title %></h1>
+    </div>
+  </div>
+  <!-- Nav -->
+  <ul class="flex items-center mb-4">
+    <% for (var i in theme.nav) { %>
+    <li
+      class="mr-4 text-gray-400 hover:underline hover:text-gray-500 transition-colors"
+    >
+      <%- link_to(theme.nav[i], __('nav.' + i)) %>
+    </li>
+    <% } %>
+  </ul>
+  <!-- Archives -->
+  <ul>
+    <% var year %> <% page.posts.each(function(post) { %> <% if (year !==
+    date(post.date, 'YYYY')) { %> <% year = date(post.date, 'YYYY') %>
+    <h2 class="mt-8 mb-2 font-semibold text-lg"><%= year %></h2>
+    <% } %>
+    <li class="pl-4 mb-1">
+      <span class="mr-6 text-sm text-gray-500">
+        <%= page.archive ? date(post.date, 'MM-DD') : date(post.date,
+        'YYYY-MM-DD') %>
+      </span>
+      <span class="text-sm border-b border-gray-500 hover:border-gray-900"
+        ><%- link_to(post.path, post.title, { class: 'post-title' }) %></span
+      >
+    </li>
+    <% }) %>
+  </ul>
+</div>
