@@ -3,3 +3,9 @@ nav:
   about: About
   archives: Archives
   tags: Tags
+
+counter:
+  tags:
+    zero: No Tags
+    one: 1 Tag In Total
+    other: "%d Tags In Total"
