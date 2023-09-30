@@ -1,1 +1,31 @@
-<h1>Hello Word</h1>
+<div class="container mx-auto mt-36">
+  <div class="flex items-center justify-center mb-8">
+    <div class="w-16 h-16">
+      <img src="/logo.svg" alt="" />
+    </div>
+    <div class="ml-8">
+      <h1 class="text-xl"><%- config.title %></h1>
+      <!-- Nav -->
+    </div>
+  </div>
+  <ul class="flex items-center justify-center mb-8">
+    <% for (var i in theme.nav) { %>
+    <li
+      class="mr-4 text-gray-400 hover:underline hover:text-gray-500 transition-colors"
+    >
+      <%- link_to(theme.nav[i], __('nav.' + i)) %>
+    </li>
+    <% } %>
+  </ul>
+  <ul class="flex items-center justify-center">
+    <% for (var name in theme.social_links) { %> <% var link =
+    theme.social_links[name]; if (name === 'email') { link = 'mailto:' + link }
+    %>
+    <li class="mr-4 w-8 h-8">
+      <a href="<%- link %>" target="_blank" rel="noopener">
+        <img src="/icons/<%- name %>.svg" alt="" />
+      </a>
+    </li>
+    <% } %>
+  </ul>
+</div>
