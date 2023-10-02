@@ -1,6 +1,6 @@
-<div class="container mx-auto mt-8">
+<div class="container mx-auto mt-36">
   <!-- Logo -->
-  <div class="flex items-center mb-4">
+  <div class="flex items-center justify-center mb-8">
     <div class="w-10 h-10">
       <img src="/logo.svg" alt="" />
     </div>
@@ -9,7 +9,7 @@
     </div>
   </div>
   <!-- Nav -->
-  <ul class="flex items-center mb-4">
+  <ul class="flex items-center justify-center mb-8">
     <% for (var i in theme.nav) { %>
     <li
       class="mr-4 text-gray-400 hover:underline hover:text-gray-500 transition-colors"
@@ -19,7 +19,7 @@
     <% } %>
   </ul>
   <!-- Archives -->
-  <ul>
+  <ul class="flex flex-col justify-center">
     <% var year %> <% page.posts.each(function(post) { %> <% if (year !==
     date(post.date, 'YYYY')) { %> <% year = date(post.date, 'YYYY') %>
     <h2 class="mt-8 mb-2 font-semibold text-lg"><%= year %></h2>
