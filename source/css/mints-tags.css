@@ -1,0 +1,11 @@
+.mints-tags a {
+  display: inline-block;
+  margin: 5px 10px;
+  word-wrap: break-word;
+  transition: all ease-out 0.2s;
+}
+
+.mints-tags a:hover {
+  color: rgb(209 213 219);
+  transform: scale(1.1);
+}

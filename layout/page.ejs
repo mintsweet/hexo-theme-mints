@@ -32,7 +32,11 @@
     </li>
     <% } %>
   </ul>
-  <h3><%= _p('counter.tags', site.tags.length) %></h3>
-  <%- tagcloud({min_font: 18, max_font: 28, amount: 30, orderby: 'count'}) %> <%
-  } %>
+  <h3 class="flex items-center justify-center mb-4">
+    <%= _p('counter.tags', site.tags.length) %>
+  </h3>
+  <div class="mints-tags">
+    <%- tagcloud({min_font: 18, max_font: 28, amount: 30, orderby: 'count'}) %>
+    <% } %>
+  </div>
 </div>
