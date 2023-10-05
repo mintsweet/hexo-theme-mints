@@ -1,13 +1,14 @@
-<div class="container mx-auto mt-36">
+<div class="max-w-2xl mx-auto mt-36">
+  <!-- Logo -->
   <div class="flex items-center justify-center mb-8">
     <div class="w-16 h-16">
       <img src="/logo.svg" alt="" />
     </div>
     <div class="ml-8">
       <h1 class="text-xl"><%- config.title %></h1>
-      <!-- Nav -->
     </div>
   </div>
+  <!-- Nav -->
   <ul class="flex items-center justify-center mb-8">
     <% for (var i in theme.nav) { %>
     <li
@@ -17,6 +18,22 @@
     </li>
     <% } %>
   </ul>
+  <!-- Divide -->
+  <div class="h-px bg-gray-400 mb-8"></div>
+  <!-- Articles -->
+  <div class="mb-8">
+    <h2 class="text-xl font-semibold mb-4"><%- __('index.articles') %></h2>
+    <ul>
+      <% var posts = site.posts.sort('date', 'desc').limit(5) %>
+      <% posts.each(function(post) { %>
+        <li class="flex items-center justify-between mb-1">
+          <span class="text-sm underline"><%= post.title %></span>
+          <span class="text-sm"><%- full_date(post.date, 'MMMM Do') %></span>
+        </li>  
+      <% }) %>
+    </ul>
+  </div>
+  <!-- Social Links -->
   <ul class="flex items-center justify-center">
     <% for (var name in theme.social_links) { %> <% var link =
     theme.social_links[name]; if (name === 'email') { link = 'mailto:' + link }

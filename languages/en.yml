@@ -4,6 +4,9 @@ nav:
   archives: Archives
   tags: Tags
 
+index:
+  articles: Articles
+
 counter:
   tags:
     zero: No Tags
