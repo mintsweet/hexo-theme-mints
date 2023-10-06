@@ -24,12 +24,12 @@
   <div class="mb-8">
     <h2 class="text-xl font-semibold mb-4"><%- __('index.articles') %></h2>
     <ul>
-      <% var posts = site.posts.sort('date', 'desc').limit(5) %>
-      <% posts.each(function(post) { %>
-        <li class="flex items-center justify-between mb-1">
-          <span class="text-sm underline"><%= post.title %></span>
-          <span class="text-sm"><%- full_date(post.date, 'MMMM Do') %></span>
-        </li>  
+      <% var posts = site.posts.sort('date', 'desc').limit(5) %> <%
+      posts.each(function(post) { %>
+      <li class="flex items-center justify-between mb-1">
+        <%- link_to(post.path, post.title,{ class: 'text-sm underline' }) %>
+        <span class="text-sm"><%- full_date(post.date, 'MMMM Do') %></span>
+      </li>
       <% }) %>
     </ul>
   </div>
