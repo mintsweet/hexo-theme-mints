@@ -9,6 +9,12 @@ nav:
   archives: /archives/
   tags: /tags/
 
+# Posts OverView
+posts_overview:
+  show_all: false
+  count: 10
+  sort_updated: false
+
 # Links to your social media.
 social_links:
   email:
