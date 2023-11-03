@@ -33,16 +33,4 @@
       <% }) %>
     </ul>
   </div>
-  <!-- Social Links -->
-  <ul class="flex items-center justify-center">
-    <% for (var name in theme.social_links) { %> <% var link =
-    theme.social_links[name]; if (name === 'email') { link = 'mailto:' + link }
-    %>
-    <li class="mr-4 w-8 h-8">
-      <a href="<%- link %>" target="_blank" rel="noopener">
-        <img src="/icons/<%- name %>.svg" alt="" />
-      </a>
-    </li>
-    <% } %>
-  </ul>
 </div>
