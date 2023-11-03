@@ -1,39 +1,32 @@
-<div class="max-w-2xl mx-auto mt-36">
-  <!-- Logo -->
-  <div class="flex items-center justify-center mb-8">
-    <div class="w-16 h-16">
+<div class="py-8 border-b border-black">
+  <div class="flex items-center">
+    <div class="w-8 h-8">
       <img src="/logo.svg" alt="" />
     </div>
-    <div class="ml-8">
-      <h1 class="text-xl"><%- config.title %></h1>
-    </div>
+    <h1 class="ml-4"><%- config.title %></h1>
   </div>
-  <!-- Nav -->
-  <ul class="flex items-center justify-center mb-8">
-    <% for (var i in theme.nav) { %>
-    <li
-      class="mr-4 text-gray-400 hover:underline hover:text-gray-500 transition-colors"
-    >
-      <%- link_to(theme.nav[i], __('nav.' + i)) %>
+  <ul class="flex items-center mt-4">
+    <% for (var name in theme.social_links) { %> <% var link =
+    theme.social_links[name]; if (name === 'email') { link = 'mailto:' + link }
+    %>
+    <li class="mr-4 w-6 h-6">
+      <a href="<%- link %>" target="_blank" rel="noopener">
+        <img src="/icons/<%- name %>.svg" alt="<%- name %>" />
+      </a>
     </li>
     <% } %>
   </ul>
-  <!-- Articles -->
-  <div class="mb-8">
-    <h2 class="text-xl font-semibold mb-4"><%- __('index.articles') %></h2>
-    <ul>
-      <% var field_sort = theme.posts_overview.sort_updated ? 'updated' : 'date' %>
-      <% if (theme.posts_overview.show_all) { %>
-        <% var posts = page.posts.sort(field_sort, 'desc') %>
-      <% } else { %>
-        <% var posts = site.posts.sort(field_sort, 'desc').limit(theme.posts_overview.count || 10) %>
-      <% } %>
-      <% posts.each(function(post) { %>
-      <li class="flex items-center justify-between mb-1">
-        <%- link_to(post.path, post.title,{ class: 'text-sm underline' }) %>
-        <span class="text-sm"><%- full_date(post.date, 'MMMM Do') %></span>
-      </li>
-      <% }) %>
-    </ul>
-  </div>
 </div>
+<ul class="py-8">
+  <% var field_sort = theme.posts_overview.sort_updated ? 'updated' : 'date' %>
+  <% if (theme.posts_overview.show_all) { %> <% var posts =
+  page.posts.sort(field_sort, 'desc') %> <% } else { %> <% var posts =
+  site.posts.sort(field_sort, 'desc').limit(theme.posts_overview.count || 10) %>
+  <% } %> <% posts.each(function(post, i) { %>
+  <% var color=i % 2 ===0 ? 'bg-gray-100' : 'white' %>
+  <li class="py-4 px-2 flex items-center justify-between <%- color %>">
+    <%- link_to(post.path, post.title) %>
+    <span class="text-sm"><%- full_date(post.date, 'MMM Do YY') %></span>
+  </li>
+  <% }) %>
+</ul>

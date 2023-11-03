@@ -1,9 +1,11 @@
 <!doctype html>
 <html>
   <%- partial('_partial/head') %>
-  <body class="relative h-screen bg-gray-100">
-    <div class="h-1 bg-gray-900"></div>
-    <main><%- body %></main>
+  <body class="relative h-screen border-t-2 border-black">
+    <%- partial('_partial/header') %>
+    <main>
+      <div class="mx-auto max-w-3xl"><%- body %></div>
+    </main>
     <%- partial('_partial/footer') %>
   </body>
 </html>
