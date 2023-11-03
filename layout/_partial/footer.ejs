@@ -1,6 +1,6 @@
 <footer class="absolute bottom-4 left-0 right-0">
   <div class="container mx-auto flex items-center justify-between">
-    <p class="text-sm">
+    <p class="text-xs">
       <% var now = date(Date.now(), 'YYYY') %> Copyright &copy; <% if
       (theme.since && now > theme.since) { %> <%= theme.since %> - <% } %> <%=
       now %> <%= config.author || config.title %>
@@ -9,9 +9,9 @@
       <% for (var name in theme.social_links) { %> <% var link =
       theme.social_links[name]; if (name === 'email') { link = 'mailto:' + link
       } %>
-      <li class="mr-4 w-6 h-6">
+      <li class="mr-4 w-5 h-5">
         <a href="<%- link %>" target="_blank" rel="noopener">
-          <img src="/icons/<%- name %>.svg" alt="" />
+          <img src="/icons/<%- name %>.svg" alt="<%- name %>" />
         </a>
       </li>
       <% } %>
