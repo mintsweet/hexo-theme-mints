@@ -1,20 +1,15 @@
 <footer class="absolute bottom-4 left-0 right-0">
-  <div class="container mx-auto flex items-center justify-between">
-    <p class="text-xs">
+  <div class="mx-auto max-w-3xl flex items-center justify-between">
+    <p class="text-sm">
       <% var now = date(Date.now(), 'YYYY') %> Copyright &copy; <% if
       (theme.since && now > theme.since) { %> <%= theme.since %> - <% } %> <%=
       now %> <%= config.author || config.title %>
     </p>
-    <ul class="flex items-center justify-center">
-      <% for (var name in theme.social_links) { %> <% var link =
-      theme.social_links[name]; if (name === 'email') { link = 'mailto:' + link
-      } %>
-      <li class="mr-4 w-5 h-5">
-        <a href="<%- link %>" target="_blank" rel="noopener">
-          <img src="/icons/<%- name %>.svg" alt="<%- name %>" />
-        </a>
-      </li>
-      <% } %>
-    </ul>
+    <p class="text-sm">
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> • Theme
+      <a href="https://github.com/mintsweet/hexo-theme-mints" target="_blank"
+        >Mints</a
+      >
+    </p>
   </div>
 </footer>
