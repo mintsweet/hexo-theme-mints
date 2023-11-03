@@ -1,0 +1,7 @@
+<header class="shadow-sm bg-white">
+  <ul class="mx-auto max-w-3xl py-2 flex items-center justify-end">
+    <% for (var i in theme.nav) { %>
+    <li class="ml-4"><%- link_to(theme.nav[i], __('nav.' + i)) %></li>
+    <% } %>
+  </ul>
+</header>
