@@ -1,37 +1,15 @@
-<div class="container mx-auto mt-36">
+<div class="py-8">
   <% if (page.type === 'about') {%>
-  <!-- Logo -->
   <div class="flex items-center justify-center mb-8">
     <h1 class="text-xl font-semibold"><%- __('nav.about') %></h1>
   </div>
-  <!-- Nav -->
-  <ul class="flex items-center justify-center mb-8">
-    <% for (var i in theme.nav) { %>
-    <li
-      class="mr-4 text-gray-400 hover:underline hover:text-gray-500 transition-colors"
-    >
-      <%- link_to(theme.nav[i], __('nav.' + i)) %>
-    </li>
-    <% } %>
-  </ul>
   <div>
     <p><%- page.content %></p>
   </div>
   <%}%> <% if (page.type === 'tags') { %>
-  <!-- Logo -->
   <div class="flex items-center justify-center mb-8">
     <h1 class="text-xl font-semibold"><%- __('nav.tags') %></h1>
   </div>
-  <!-- Nav -->
-  <ul class="flex items-center justify-center mb-8">
-    <% for (var i in theme.nav) { %>
-    <li
-      class="mr-4 text-gray-400 hover:underline hover:text-gray-500 transition-colors"
-    >
-      <%- link_to(theme.nav[i], __('nav.' + i)) %>
-    </li>
-    <% } %>
-  </ul>
   <h3 class="flex items-center justify-center mb-4">
     <%= _p('counter.tags', site.tags.length) %>
   </h3>
