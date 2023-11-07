@@ -6,7 +6,7 @@
 
 code
   padding: 2px 5px
-  color: rgb(132 204 22)
+  color: #f97316
 
 .gutter
   font-size: 0.875rem
@@ -25,23 +25,53 @@ code
     display: inline-block
     padding: 0 0.5rem
 
-  .comment, .quote
-    color: pop(code_color)
+  .subst
+    color: #2f3337
 
-  .keyword, .selector-tag, .addition
-    color: pop(code_color)
+  .comment
+    color: #656e77
 
-  .number, .string, .meta .meta-string, .literal, .doctag, .regexp
-    color: pop(code_color)
+  .keyword, .selector-tag, .meta .keyword, .doctag, .section
+    color: #015692
 
-  .title, .section, .name, .selector-id, .selector-class
-    color: pop(code_color)
+  .attr
+    color: #015692
 
-  .attribute, .attr, .variable, .template-variable, .class .title, .type
-    color: pop(code_color)
+  .attribute
+    color: #803378
 
-  .symbol, .bullet, .subst, .meta, .meta .keyword, .selector-attr, .selector-pseudo, .link
-    color: pop(code_color)
+  .name, .type, .number, .selector-id, .quote, .template-tag
+    color: #b75501
 
-  .built_in, .deletion
-    color: pop(code_color)
+  .selector-class
+    color: #015692
+
+  .string, .regexp, .symbol, .variable, .template-variable, .link, .selector-attr
+    color: #54790d
+
+  .meta, .selector-pseudo
+    color: #015692
+
+  .built_in, .title, .literal
+    color: #b75501
+
+  .bullet, .code
+    color: #535a60
+
+  .meta .string
+    color: #54790d
+
+  .deletion
+    color: #c02d2e
+
+  .addition
+    color: #2f6f44
+
+  .emphasis
+    font-style: italic
+
+  .strong
+    font-weight: bold
+
+  .formula, .operator, .params, .property, .punctuation, .tag
+    /* purposely ignored */
