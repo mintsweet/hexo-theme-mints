@@ -1,11 +1,11 @@
 <footer class="absolute bottom-2 left-0 right-0">
   <div class="mx-auto max-w-3xl flex items-center justify-between">
-    <p class="text-sm">
+    <p class="text-sm text-gray-400">
       <% var now = date(Date.now(), 'YYYY') %> Copyright &copy; <% if
       (theme.since && now > theme.since) { %> <%= theme.since %> - <% } %> <%=
       now %> <%= config.author || config.title %>
     </p>
-    <p class="text-sm">
+    <p class="text-sm text-gray-400">
       <%- __('footer.powered') %>
       <a href="https://hexo.io" target="_blank" class="underline">Hexo</a>
       • <%- __('footer.theme') %>
