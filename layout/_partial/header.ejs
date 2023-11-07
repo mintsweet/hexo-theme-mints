@@ -2,9 +2,11 @@
   <div class="flex justify-between mx-auto max-w-3xl py-2">
     <div class="flex items-center">
       <div class="w-8 h-8">
-        <img src="/logo.svg" alt="" />
+        <a href="/">
+          <img src="/logo.svg" alt="" />
+        </a>
       </div>
-      <h1 class="ml-4"><%- config.title %></h1>
+      <h1 class="ml-4"><%- link_to('/', config.title) %></h1>
     </div>
     <ul class="flex items-center justify-end">
       <% for (var i in theme.nav) { %>
