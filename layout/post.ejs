@@ -1,16 +1,14 @@
-<div class="container mx-auto">
-  <h1 class="text-lg font-semibold mb-0.5"><%= page.title %></h1>
+<div class="py-8 post">
+  <h1 class="text-3xl font-semibold mb-1"><%= page.title %></h1>
   <div class="flex items-center mb-4 text-sm">
-    <div><%= date(page.date, 'YYYY-MM-DD') %></div>
-    <div class="mx-4">|</div>
+    <span class="pl-2 text-slate-400"><%= date(page.date, 'YYYY-MM-DD') %></span>
+    <span class="mx-4">|</span>
     <% if (page.tags) { %>
-    <ul class="flex items-center">
-      <li>
-        <% page.tags.each(function(tag) { %> <%- link_to(tag.path, '#' +
-        tag.name, { class: 'tag' }) %> <% }) %>
-      </li>
-    </ul>
+    <div class="flex items-center">
+      <% page.tags.each(function(tag) { %> <%- link_to(tag.path, '#' + tag.name,
+      { class: 'mr-2 text-slate-400' }) %> <% }) %>
+    </div>
     <% } %>
   </div>
-  <article class="mints-post"><%- page.content %></article>
+  <article class="post-content"><%- page.content %></article>
 </div>
