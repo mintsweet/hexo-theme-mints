@@ -12,6 +12,10 @@ footer:
   theme: Theme
 
 counter:
+  archives:
+    zero: No Posts
+    one: 1 Post In Total
+    other: "%d Posts In Total"
   tags:
     zero: No Tags
     one: 1 Tag In Total

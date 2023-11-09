@@ -1,19 +1,23 @@
 <div class="py-8">
-  <div class="flex items-center justify-center mb-8">
-    <h1 class="text-xl font-semibold"><%- __('nav.archives') %></h1>
-  </div>
+  <h2 class="text-2xl font-semibold">
+    <%= _p("counter.archives", site.posts.length) %>
+  </h2>
   <ul class="flex flex-col justify-center">
     <% var year %> <% page.posts.each(function(post) { %> <% if (year !==
     date(post.date, 'YYYY')) { %> <% year = date(post.date, 'YYYY') %>
-    <h2 class="mt-8 mb-2 font-semibold text-lg"><%= year %></h2>
+    <h3 class="mt-8 mb-4 text-xl font-semibold"><%= year %></h3>
     <% } %>
-    <li class="pl-4 mb-1">
-      <span class="mr-6 text-sm text-gray-500">
-        <%= page.archive ? date(post.date, 'MM-DD') : date(post.date,
-        'YYYY-MM-DD') %>
-      </span>
-      <span class="text-sm border-b border-gray-500 hover:border-gray-900"
-        ><%- link_to(post.path, post.title, { class: 'post-title' }) %></span
+    <li>
+      <a
+        href="<%= url_for(post.path) %>"
+        class="group flex px-4 py-2 hover:bg-gray-100 transition-colors"
+      >
+        <span class="basis-20 group-hover:text-orange-500">
+          <%= date(post.date, 'MM-DD') %>
+        </span>
+        <span class="flex-auto group-hover:text-orange-500"
+          ><%- post.title %></span
+        ></a
       >
     </li>
     <% }) %>
